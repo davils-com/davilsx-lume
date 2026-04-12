@@ -4,3 +4,5 @@ plugins {
 rootProject.name = "lume"
 include("davilsx-lume-ui")
 include("davilsx-lume-icons")
+
+include("davilsx-lume-icons:davilsx-lume-icons-lucide")
