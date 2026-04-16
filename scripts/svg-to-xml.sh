@@ -7,8 +7,8 @@ Usage:
   $(basename "$0") ICONS_DIR EXPORT_DIR
 
 Arguments:
-  ICONS_DIR   Verzeichnis mit allen SVG-Dateien (rekursiv)
-  EXPORT_DIR  Zielverzeichnis für Android-VectorDrawable-XMLs
+  ICONS_DIR   The directory containing SVG files to convert
+  EXPORT_DIR  The directory where converted XML files will be saved
 
 Example:
   $(basename "$0") ./icons ./app/src/main/res/drawable
