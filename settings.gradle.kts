@@ -1,5 +1,8 @@
 rootProject.name = "davilsx-lume"
 
+// Common
+include(":davilsx-lume-common")
+
 // UI
 include(":davilsx-lume-ui")
 
