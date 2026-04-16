@@ -3,6 +3,8 @@ kotlin = "2.3.20"
 kreate = "1.0.1"
 kotest = "6.1.11"
 ksp = "2.3.6"
+android = "9.1.1"
+compose = "1.10.3"
 
 [libraries]
 # actual plugins but needed as dependencies in buildSrc
@@ -10,6 +12,9 @@ kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", v
 kreate-gradle-plugin = { module = "com.davils.kreate:com.davils.kreate.gradle.plugin", version.ref = "kreate" }
 kotest-gradle-plugin = { module = "io.kotest:io.kotest.gradle.plugin", version.ref = "kotest" }
 ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+android-kotlin-library = { module = "com.android.kotlin.multiplatform.library:com.android.kotlin.multiplatform.library.gradle.plugin", version.ref = "android" }
+compose-gradle-plugin = { module = "org.jetbrains.compose:org.jetbrains.compose.gradle.plugin", version.ref = "compose" }
+compose-compiler-gradle-plugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 
 [bundles]
 # build
@@ -18,4 +23,7 @@ build-src = [
     "kreate-gradle-plugin",
     "kotest-gradle-plugin",
     "ksp-gradle-plugin",
+    "android-kotlin-library",
+    "compose-gradle-plugin",
+    "compose-compiler-gradle-plugin"
 ]
