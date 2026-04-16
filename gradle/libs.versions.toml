@@ -4,9 +4,24 @@ kreate = "1.0.1"
 kotest = "6.1.11"
 ksp = "2.3.6"
 android = "9.1.1"
+
+# compose
 compose = "1.10.3"
+activity = "1.13.0"
+lifecycle = "2.10.0"
 
 [libraries]
+# compose common
+compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose" }
+compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose" }
+compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose" }
+compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose" }
+androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
+
+# compose android
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity" }
+
 # actual plugins but needed as dependencies in buildSrc
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kreate-gradle-plugin = { module = "com.davils.kreate:com.davils.kreate.gradle.plugin", version.ref = "kreate" }
@@ -17,7 +32,6 @@ compose-gradle-plugin = { module = "org.jetbrains.compose:org.jetbrains.compose.
 compose-compiler-gradle-plugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 
 [bundles]
-# build
 build-src = [
     "kotlin-gradle-plugin",
     "kreate-gradle-plugin",
@@ -26,4 +40,17 @@ build-src = [
     "android-kotlin-library",
     "compose-gradle-plugin",
     "compose-compiler-gradle-plugin"
+]
+
+common-android-api = [
+    "androidx-activity-compose"
+]
+
+common-common-api = [
+    "compose-runtime",
+    "compose-foundation",
+    "compose-ui",
+    "compose-components-resources",
+    "androidx-lifecycle-viewmodel",
+    "androidx-lifecycle-runtimeCompose"
 ]
