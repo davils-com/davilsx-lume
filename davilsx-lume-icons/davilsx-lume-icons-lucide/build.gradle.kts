@@ -24,4 +24,19 @@ kotlin {
     android {
         namespace = "com.davils.lume.icons.lucide"
     }
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation(libs.compose.components.resources)
+            }
+        }
+    }
+}
+
+compose {
+    resources {
+        nameOfResClass = "LumeLucideResources"
+        packageOfResClass = "com.davils.lume.icons.lucide.resources"
+    }
 }

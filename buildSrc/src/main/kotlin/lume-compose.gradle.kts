@@ -23,3 +23,12 @@ repositories {
     mavenCentral()
     google()
 }
+
+compose {
+    resources {
+        customDirectory(
+            "commonMain",
+            provider { layout.projectDirectory.dir("src/commonMain/resources") }
+        )
+    }
+}
