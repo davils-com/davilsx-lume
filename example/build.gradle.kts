@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-rootProject.name = "davilsx-lume"
+plugins {
+    org.jetbrains.kotlin.plugin.compose
+    org.jetbrains.kotlin.jvm
+    org.jetbrains.compose
+}
 
-// Common
-include(":davilsx-lume-common")
+repositories {
+    mavenCentral()
+    google()
+}
 
-// UI
-include(":davilsx-lume-ui")
-
-// Icons
-include(":davilsx-lume-icons")
-include(":davilsx-lume-icons:davilsx-lume-icons-lucide")
-
-// Example
-include("example")
+dependencies {
+    implementation(compose.desktop.currentOs)
+    implementation(project(":davilsx-lume-ui"))
+    implementation(project(":davilsx-lume-icons:davilsx-lume-icons-lucide"))
+}
