@@ -17,6 +17,7 @@
 package com.davils.buildsrc.iconize
 
 import com.android.build.api.variant.impl.capitalizeFirstChar
+import com.davils.buildsrc.executeTaskBeforeCompile
 import com.davils.buildsrc.iconize.extension.IconizeExtension
 import com.davils.buildsrc.iconize.generation.IconizeIconGenerationTask
 import org.gradle.api.Plugin
@@ -73,5 +74,6 @@ public class Iconize : Plugin<Project> {
                 dependsOn(packTask)
             }
         }
+        executeTaskBeforeCompile(generateAllIcons.get())
     }
 }
