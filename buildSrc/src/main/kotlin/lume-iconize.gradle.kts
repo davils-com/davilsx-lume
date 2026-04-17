@@ -14,13 +14,6 @@
  * limitations under the License.
  */
 
-package com.davils.buildsrc.icon.codegen
+import com.davils.buildsrc.iconize.Iconize
 
-internal data class IconGeneratorConfig(
-    val copyright: String,
-    val packageName: String,
-    val resourceClassName: String,
-    val resourcePackageName: String,
-    val painterObjectName: String,
-)
-
+apply<Iconize>()

@@ -21,7 +21,32 @@ import org.gradle.api.model.ObjectFactory
 import org.gradle.api.provider.Property
 import javax.inject.Inject
 
+/**
+ * Nested extension describing the Compose multiplatform `Resources` class
+ * used to resolve drawables referenced by generated painters.
+ *
+ * The generator needs to know both the fully-qualified package and the simple
+ * class name of the resources aggregator in order to emit the correct
+ * `import` and `Res.drawable.<name>` references.
+ *
+ * @since 1.0.0
+ */
 public abstract class IconizeResourceExtension @Inject constructor(factory: ObjectFactory, project: Project) {
+    /**
+     * Simple class name of the generated Compose resources aggregator.
+     *
+     * Defaults to `Res`, matching the Compose multiplatform default.
+     *
+     * @since 1.0.0
+     */
     public val nameOfResClass: Property<String> = factory.property(String::class.java).convention("Res")
+
+    /**
+     * Fully-qualified package of the generated Compose resources aggregator.
+     *
+     * Defaults to `<project.group>.resources`.
+     *
+     * @since 1.0.0
+     */
     public val packageOfResClass: Property<String> = factory.property(String::class.java).convention("${project.group}.resources")
 }
