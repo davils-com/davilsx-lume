@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 
-package com.davils.buildsrc.icon.domain
+package com.davils.buildsrc.iconize
 
-internal data class IconSpec(
-    val fileNameWithoutExtension: String,
-    val resourceName: String,
-    val painterFunctionName: String,
-    val composableFunctionName: String,
-    val docSlug: String,
-)
+import com.davils.buildsrc.iconize.extension.IconizeExtension
+import org.gradle.api.DefaultTask
+import org.gradle.api.provider.Property
+import org.gradle.api.tasks.TaskAction
 
+public abstract class IconizeIconGenerationTask : DefaultTask() {
+    public abstract val iconPackName: Property<String>
+
+    public abstract val iconizeExtension: Property<IconizeExtension>
+
+    @TaskAction
+    public fun generate() {
+        println("Generating icons")
+    }
+}
