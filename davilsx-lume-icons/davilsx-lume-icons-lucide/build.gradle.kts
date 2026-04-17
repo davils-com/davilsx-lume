@@ -76,8 +76,4 @@ iconize {
             since = "1.0.0"
         }
     }
-
-    pack("davils") {
-        fileExtensions = listOf("xml")
-    }
 }
