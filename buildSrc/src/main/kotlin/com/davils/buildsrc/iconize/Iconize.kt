@@ -18,6 +18,7 @@ package com.davils.buildsrc.iconize
 
 import com.android.build.api.variant.impl.capitalizeFirstChar
 import com.davils.buildsrc.iconize.extension.IconizeExtension
+import com.davils.buildsrc.iconize.generation.IconizeIconGenerationTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.create
@@ -60,10 +61,12 @@ public class Iconize : Plugin<Project> {
 
         val packs = extension.getPacks()
         packs.all {
+            val pack = this
             val taskName = "generate${name.capitalizeFirstChar()}Icons"
             val packTask = tasks.register<IconizeIconGenerationTask>(taskName) {
                 group = "iconize"
-                description = "Generates ${this@all.name} icons."
+                description = "Generates ${pack.name} icons."
+                configureFrom(extension, pack)
             }
 
             generateAllIcons.configure {
