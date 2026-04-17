@@ -14,11 +14,14 @@
  * limitations under the License.
  */
 
-package com.davils.buildsrc.icon.dsl
+package com.davils.buildsrc.iconize.extension
 
-public open class IconKDocExtension {
-    public var enabled: Boolean = false
-    public var docUrlPattern: String = ""
-    public var since: String = "1.0.0"
+import org.gradle.api.Project
+import org.gradle.api.model.ObjectFactory
+import org.gradle.api.provider.Property
+import javax.inject.Inject
+
+public abstract class IconizeResourceExtension @Inject constructor(factory: ObjectFactory, project: Project) {
+    public val nameOfResClass: Property<String> = factory.property(String::class.java).convention("Res")
+    public val packageOfResClass: Property<String> = factory.property(String::class.java).convention("${project.group}.resources")
 }
-
