@@ -24,4 +24,12 @@ kotlin {
     android {
         namespace = "com.davils.lume.ui"
     }
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation(project(":davilsx-lume-icons:davilsx-lume-icons-lucide"))
+            }
+        }
+    }
 }
