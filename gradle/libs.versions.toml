@@ -5,22 +5,22 @@ kotest = "6.1.11"
 ksp = "2.3.6"
 android = "9.1.1"
 poet = "2.3.0"
+atomicfu = "0.32.1"
 
 # compose
 compose = "1.10.3"
 activity = "1.13.0"
 lifecycle = "2.10.0"
-material3 = "1.9.0"
 
 [libraries]
 poet-core = { module = "com.squareup:kotlinpoet", version.ref = "poet" }
+kotlinx-atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "atomicfu" }
 
 # compose common
 compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose" }
 compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose" }
 compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose" }
 compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose" }
-compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
 androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 
@@ -57,7 +57,7 @@ common-common-api = [
     "compose-foundation",
     "compose-ui",
     "compose-components-resources",
-    "compose-material3",
     "androidx-lifecycle-viewmodel",
-    "androidx-lifecycle-runtimeCompose"
+    "androidx-lifecycle-runtimeCompose",
+    "kotlinx-atomicfu"
 ]
