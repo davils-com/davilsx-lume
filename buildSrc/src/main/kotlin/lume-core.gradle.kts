@@ -54,8 +54,6 @@ kreate {
     }
 
     project {
-        projectGroup = group.toString()
-
         docs {
             enabled = true
             outputDirectory = "dokka"
