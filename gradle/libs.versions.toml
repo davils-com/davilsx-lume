@@ -8,7 +8,7 @@ poet = "2.3.0"
 atomicfu = "0.32.1"
 
 # compose
-compose = "1.10.3"
+compose = "1.11.0"
 activity = "1.13.0"
 lifecycle = "2.10.0"
 
